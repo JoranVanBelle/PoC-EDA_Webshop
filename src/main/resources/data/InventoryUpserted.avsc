@@ -1,0 +1,23 @@
+{
+  "type": "record",
+  "name": "InventoryUpserted",
+  "namespace": "com.poc",
+  "fields": [
+    {
+      "name": "productID",
+      "type": "int"
+    },
+    {
+      "name": "productname",
+      "type": "string"
+    },
+    {
+      "name": "quantity",
+      "type": "int"
+    },
+    {
+      "name": "timestamp",
+      "type": "long"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "type": "record",
+  "name": "PricingUpserted",
+  "namespace": "com.poc",
+  "fields": [
+    {
+      "name": "productID",
+      "type": "int"
+    },
+    {
+      "name": "productname",
+      "type": "string"
+    },
+    {
+      "name": "price",
+      "type": "double"
+    },
+    {
+      "name": "timestamp",
+      "type": "long"
+    }
+  ]
+}

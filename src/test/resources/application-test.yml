@@ -1,0 +1,73 @@
+server:
+  port: 1083
+
+spring:
+  application:
+    name: EDA webshop
+  
+  kafka:
+    inventoryTopic: Webshop.Inventory
+    pricingTopic: Webshop.Pricing
+    transportTopic: Webshop.Transport
+    orderTopic: Webshop.Order
+    payedTopic: Webshop.Payed
+
+    consumer:
+      bootstrapServer: http://localhost:9092
+      groupId: adapter_mvb
+      autoOffsetReset: earliest
+      keyDeserializer: org.apache.kafka.common.serialization.StringDeserializer
+      valueDeserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+      schemaRegistry: http://localhost:8081
+
+    producer:
+      bootstrapServer: http://localhost:9092
+      acks: all
+      retries: 0
+      keySerializer: org.apache.kafka.common.serialization.StringSerializer
+      valueSerializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+      schemaRegistry: http://localhost:8081
+
+inventory:
+  datasource:
+    url: jdbc:mysql://inventory-1:3307/inventory
+    password: admin
+    username: user
+
+pricing:
+  datasource:
+    url: jdbc:mysql://pricing-1:3308/pricing
+    password: admin
+    username: user
+
+transport:
+  datasource:
+    url: jdbc:mysql://transport-1:3309/transport
+    password: admin
+    username: user
+
+order:
+  datasource:
+    url: jdbc:mysql://order-1:3310/order
+    password: admin
+    username: user
+
+user:
+  datasource:
+    url: jdbc:mysql://user-1:3311/user
+    password: admin
+    username: user
+
+payment:
+  datasource:
+    url: jdbc:mysql://payment-1:3311/payment
+    password: admin
+    username: user
+
+orderedtopaid:
+  applicationId: OrderPaid
+  bootstrapServer: http://localhost:9092
+  keySerDes: org.apache.kafka.common.serialization.StringSerializer
+  valueSerDes: io.confluent.kafka.serializers.KafkaAvroSerializer
+  schemaRegistry: http://localhost:8081
+  topic: Webshop.Payed

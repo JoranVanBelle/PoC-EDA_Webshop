@@ -1,0 +1,35 @@
+{
+  "type": "record",
+  "name": "PaymentRegistered",
+  "namespace": "com.poc",
+  "fields": [
+    {
+      "name": "OrderID",
+      "type": "int"
+    },
+    {
+      "name": "orderPrice",
+      "type": "double"
+    },
+    {
+      "name": "inventoryID",
+      "type": "int"
+    },
+    {
+      "name": "quantity",
+      "type": "int"
+    },
+    {
+      "name": "username",
+      "type": "string"
+    },
+    {
+      "name": "transportID",
+      "type": "int"
+    },
+    {
+      "name": "timestamp",
+      "type": "long"
+    }
+  ]
+}

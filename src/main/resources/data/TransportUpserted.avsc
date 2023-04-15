@@ -1,0 +1,19 @@
+{
+  "type": "record",
+  "name": "TransportUpserted",
+  "namespace": "com.poc",
+  "fields": [
+    {
+      "name": "transportID",
+      "type": "int"
+    },
+    {
+      "name": "transportname",
+      "type": "string"
+    },
+    {
+      "name": "timestamp",
+      "type": "long"
+    }
+  ]
+}
