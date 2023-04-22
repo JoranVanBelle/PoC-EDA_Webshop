@@ -2,7 +2,6 @@ package com.webshop.eda.consumer;
 
 import org.apache.avro.generic.GenericRecord;
 import org.apache.avro.specific.SpecificData;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;

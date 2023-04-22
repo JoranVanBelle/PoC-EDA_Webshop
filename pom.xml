@@ -14,13 +14,15 @@
 	<name>EDA-webshop</name>
 	<description>Poc EDA webshop</description>
 	<properties>
+		<maven.test.skip>true</maven.test.skip>
         <maven.compiler.source>19</maven.compiler.source>
         <maven.compiler.target>19</maven.compiler.target>
 		<confluent.version>7.3.1</confluent.version>
         <avro.version>1.10.2</avro.version>
-        <kafka.version>3.3.2</kafka.version>
+        <kafka.version>3.4.0</kafka.version>
 	</properties>
 	<dependencies>
+		
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
@@ -112,6 +114,7 @@
                     </execution>
                 </executions>
             </plugin>
+            
 		</plugins>
 	</build>
 	

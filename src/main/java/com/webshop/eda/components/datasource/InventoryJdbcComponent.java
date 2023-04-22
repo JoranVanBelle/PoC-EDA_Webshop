@@ -21,8 +21,8 @@ public class InventoryJdbcComponent {
 		this.properties = properties;
 	}
 	
-	@Bean("inventoryDataSourceProperties")
 	@Primary
+	@Bean("inventoryDataSourceProperties")
 	public DataSource primaryDataSourceProperties() {
 		return DataSourceBuilder.create()
 				.url(properties.getUrl())

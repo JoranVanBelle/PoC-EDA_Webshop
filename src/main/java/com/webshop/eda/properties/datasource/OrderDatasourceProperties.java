@@ -5,18 +5,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix="order.datasource")
 public class OrderDatasourceProperties {
 
-	private String driverClassName;
 	private String url;
 	private String password;
 	private String username;
-	
-	public String getDriverClassName() {
-		return driverClassName;
-	}
-	
-	public void setDriverClassName(String driverClassName) {
-		this.driverClassName = driverClassName;
-	}
 	
 	public String getUrl() {
 		return url;

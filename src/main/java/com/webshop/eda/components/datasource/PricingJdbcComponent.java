@@ -4,8 +4,10 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
+import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Primary;
 import org.springframework.data.jdbc.repository.config.EnableJdbcRepositories;
 import org.springframework.data.repository.NoRepositoryBean;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -22,26 +24,18 @@ public class PricingJdbcComponent {
 		this.properties = properties;
 	}
 	
-	@Bean
-    public DataSourceProperties pricingDataSourceProperties() {
-		DataSourceProperties props = new DataSourceProperties();
-		props.setDriverClassName(properties.getDriverClassName());
-		props.setUrl(properties.getUrl());
-		props.setUsername(properties.getUsername());
-		props.setPassword(properties.getPassword());
-		
-        return props;
-    }
-	
-	@Bean
-	public DataSource pricingDataSource() {
-	    return pricingDataSourceProperties()
-	      .initializeDataSourceBuilder()
-	      .build();
+	@Primary
+	@Bean("pricingDataSourceProperties")
+	public DataSource primaryDataSourceProperties() {
+		return DataSourceBuilder.create()
+				.url(properties.getUrl())
+				.username(properties.getUsername())
+				.password(properties.getPassword())
+				.build();
 	}
 	
-	@Bean
-	public NamedParameterJdbcTemplate pricingJdbcTemplate(@Qualifier("pricingDataSource") DataSource dataSource) {
+	  @Bean(name = "pricingJdbcTemplate")
+	  public NamedParameterJdbcTemplate pricingrJdbcTemplate(@Qualifier("pricingDataSourceProperties") DataSource dataSource) {
 	    return new NamedParameterJdbcTemplate(dataSource);
-	}
+	  }
 }

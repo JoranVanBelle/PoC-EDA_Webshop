@@ -6,6 +6,8 @@ spring:
     name: EDA webshop
   
   kafka:
+    bootstrap:
+      servers:  broker:29092
     properties:
       schema:
         registry:
@@ -17,7 +19,7 @@ spring:
     payedTopic: Webshop.Payed
 
     consumer:
-      bootstrapServer: http://localhost:9092
+      bootstrapServer: broker:29092
       groupId: adapter_mvb
       autoOffsetReset: earliest
       keyDeserializer: org.apache.kafka.common.serialization.StringDeserializer
@@ -25,7 +27,7 @@ spring:
       schemaRegistry: http://localhost:8081
 
     producer:
-      bootstrapServer: http://localhost:9092
+      bootstrapServer: broker:29092
       acks: all
       retries: 0
       keySerializer: org.apache.kafka.common.serialization.StringSerializer
@@ -34,43 +36,43 @@ spring:
 
 inventory:
   datasource:
-    url: jdbc:mysql://localhost:3307/user
+    url: jdbc:mysql://inventory :3306/user
     password: mysecretpassword
     username: root
 
 pricing:
   datasource:
-    url: jdbc:mysql://localhost:3308/user
+    url: jdbc:mysql://pricing:3306/user
     password: mysecretpassword
     username: root
 
 transport:
   datasource:
-    url: jdbc:mysql://localhost:3309/user
+    url: jdbc:mysql://transport:3306/user
     password: mysecretpassword
     username: root
 
 order:
   datasource:
-    url: jdbc:mysql://localhost:3310/user
+    url: jdbc:mysql://order:3306/user
     password: mysecretpassword
     username: root
 
 user:
   datasource:
-    url: jdbc:mysql://localhost:3311/user
+    url: jdbc:mysql://user:3306/user
     password: mysecretpassword
     username: root
 
 payment:
   datasource:
-    url: jdbc:mysql://localhost:3311/user
+    url: jdbc:mysql://payment:3306/payment
     password: mysecretpassword
     username: root
 
-orderedToPaid:
+orderedtopaid:
   applicationId: OrderPaid
-  bootstrapServer: http://localhost:9092
+  bootstrapServer: broker:29092
   keySerDes: org.apache.kafka.common.serialization.StringSerde
   valueSerDes: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
   schemaRegistry: http://localhost:8081

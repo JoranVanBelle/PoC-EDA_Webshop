@@ -6,6 +6,10 @@ spring:
     name: EDA webshop
   
   kafka:
+    properties:
+      schema:
+        registry:
+          url: http://localhost:8081
     inventoryTopic: Webshop.Inventory
     pricingTopic: Webshop.Pricing
     transportTopic: Webshop.Transport
@@ -30,44 +34,45 @@ spring:
 
 inventory:
   datasource:
-    url: jdbc:mysql://inventory-1:3307/inventory
-    password: admin
-    username: user
+    url: jdbc:mysql://localhost:3307/user
+    password: mysecretpassword
+    username: root
 
 pricing:
   datasource:
-    url: jdbc:mysql://pricing-1:3308/pricing
-    password: admin
-    username: user
+    url: jdbc:mysql://localhost:3308/user
+    password: mysecretpassword
+    username: root
 
 transport:
   datasource:
-    url: jdbc:mysql://transport-1:3309/transport
-    password: admin
-    username: user
+    url: jdbc:mysql://localhost:3309/user
+    password: mysecretpassword
+    username: root
 
 order:
   datasource:
-    url: jdbc:mysql://order-1:3310/order
-    password: admin
-    username: user
+    url: jdbc:mysql://localhost:3310/user
+    password: mysecretpassword
+    username: root
 
 user:
   datasource:
-    url: jdbc:mysql://user-1:3311/user
-    password: admin
-    username: user
+    url: jdbc:mysql://localhost:3311/user
+    password: mysecretpassword
+    username: root
 
 payment:
   datasource:
-    url: jdbc:mysql://payment-1:3311/payment
-    password: admin
-    username: user
+    url: jdbc:mysql://localhost:3311/user
+    password: mysecretpassword
+    username: root
 
-orderedtopaid:
+orderedToPaid:
   applicationId: OrderPaid
   bootstrapServer: http://localhost:9092
-  keySerDes: org.apache.kafka.common.serialization.StringSerializer
-  valueSerDes: io.confluent.kafka.serializers.KafkaAvroSerializer
+  keySerDes: org.apache.kafka.common.serialization.StringSerde
+  valueSerDes: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
   schemaRegistry: http://localhost:8081
+  input: Webshop.Order
   topic: Webshop.Payed

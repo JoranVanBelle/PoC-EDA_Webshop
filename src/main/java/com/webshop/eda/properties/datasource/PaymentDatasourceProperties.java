@@ -7,19 +7,10 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties(prefix="payment.datasource")
 public class PaymentDatasourceProperties {
 
-	private String driverClassName;
 	private String url;
 	private String password;
 	private String username;
-	
-	public String getDriverClassName() {
-		return driverClassName;
-	}
-	
-	public void setDriverClassName(String driverClassName) {
-		this.driverClassName = driverClassName;
-	}
-	
+		
 	public String getUrl() {
 		return url;
 	}
