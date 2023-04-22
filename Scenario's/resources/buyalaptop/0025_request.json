@@ -1,0 +1,10 @@
+{
+  "order": {
+      "orderid": 1,
+      "orderprice": 20.00,
+      "inventoryid": 1,
+      "quantity": 1,
+      "transportid": 1,
+      "username": "user"
+  }
+}
