@@ -6,12 +6,12 @@ spring:
     name: EDA webshop
   
   kafka:
-    bootstrap:
-      servers:  broker:29092
     properties:
+      bootstrap:
+        servers:  broker:29092
       schema:
         registry:
-          url: http://localhost:8081
+          url: http://schema-registry:8081
     inventoryTopic: Webshop.Inventory
     pricingTopic: Webshop.Pricing
     transportTopic: Webshop.Transport
@@ -24,7 +24,7 @@ spring:
       autoOffsetReset: earliest
       keyDeserializer: org.apache.kafka.common.serialization.StringDeserializer
       valueDeserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
-      schemaRegistry: http://localhost:8081
+      schemaRegistry: http://schema-registry:8081
 
     producer:
       bootstrapServer: broker:29092
@@ -32,29 +32,29 @@ spring:
       retries: 0
       keySerializer: org.apache.kafka.common.serialization.StringSerializer
       valueSerializer: io.confluent.kafka.serializers.KafkaAvroSerializer
-      schemaRegistry: http://localhost:8081
+      schemaRegistry: http://schema-registry:8081
 
 inventory:
   datasource:
-    url: jdbc:mysql://inventory :3306/user
+    url: jdbc:mysql://inventory :3306/inventory
     password: mysecretpassword
     username: root
 
 pricing:
   datasource:
-    url: jdbc:mysql://pricing:3306/user
+    url: jdbc:mysql://pricing:3306/pricing
     password: mysecretpassword
     username: root
 
 transport:
   datasource:
-    url: jdbc:mysql://transport:3306/user
+    url: jdbc:mysql://transport:3306/transport
     password: mysecretpassword
     username: root
 
 order:
   datasource:
-    url: jdbc:mysql://order:3306/user
+    url: jdbc:mysql://order:3306/order
     password: mysecretpassword
     username: root
 
@@ -75,6 +75,6 @@ orderedtopaid:
   bootstrapServer: broker:29092
   keySerDes: org.apache.kafka.common.serialization.StringSerde
   valueSerDes: io.confluent.kafka.streams.serdes.avro.SpecificAvroSerde
-  schemaRegistry: http://localhost:8081
+  schemaRegistry: http://schema-registry:8081
   input: Webshop.Order
   topic: Webshop.Payed

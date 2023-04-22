@@ -27,7 +27,6 @@ public class OrderProducerComponent {
 		this.properties = properties;
 	}
 	
-    @Bean
     public ProducerFactory<String, OrderRegistered> orderProducerFactory() {
         Map<String, Object> configProps = new HashMap<>();
         configProps.put(

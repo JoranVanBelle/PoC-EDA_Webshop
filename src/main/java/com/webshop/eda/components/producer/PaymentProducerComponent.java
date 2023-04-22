@@ -25,7 +25,6 @@ public class PaymentProducerComponent {
 		this.properties = properties;
 	}
 	
-    @Bean
     public ProducerFactory<String, PaymentRegistered> paymentProducerFactory() {
         Map<String, Object> configProps = new HashMap<>();
         configProps.put(

@@ -26,9 +26,9 @@ private final ConsumerProperties properties;
 		this.properties = properties;
 	}
 	
-    @Bean
     public ConsumerFactory<String, PaymentRegistered> paymentConsumerFactory() {
         Map<String, Object> props = new HashMap<>();
+        System.err.println(properties.getBootstrapServer());
         props.put(
           ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, 
           properties.getBootstrapServer());
@@ -52,11 +52,11 @@ private final ConsumerProperties properties;
 
     @Bean
     public ConcurrentKafkaListenerContainerFactory<String, PaymentRegistered> 
-      paymentKafkaListenerContainerFactory(ConsumerFactory<String, PaymentRegistered> paymentConsumerFactory) {
+      paymentKafkaListenerContainerFactory() {
    
         ConcurrentKafkaListenerContainerFactory<String, PaymentRegistered> factory =
           new ConcurrentKafkaListenerContainerFactory<>();
-        factory.setConsumerFactory(paymentConsumerFactory);
+        factory.setConsumerFactory(paymentConsumerFactory());
         return factory;
     }
 }

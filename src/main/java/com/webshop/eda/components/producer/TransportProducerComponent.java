@@ -24,7 +24,6 @@ public class TransportProducerComponent {
 		this.properties = properties;
 	}
 	
-    @Bean
     public ProducerFactory<String, TransportUpserted> transportProducerFactory() {
         Map<String, Object> configProps = new HashMap<>();
         configProps.put(

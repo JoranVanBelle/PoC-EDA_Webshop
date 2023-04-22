@@ -25,7 +25,6 @@ private final ConsumerProperties properties;
 		this.properties = properties;
 	}
 	
-    @Bean
     public ConsumerFactory<String, TransportUpserted> transportConsumerFactory() {
         Map<String, Object> props = new HashMap<>();
         props.put(
@@ -52,11 +51,11 @@ private final ConsumerProperties properties;
 
     @Bean
     public ConcurrentKafkaListenerContainerFactory<String, TransportUpserted> 
-      transportKafkaListenerContainerFactory(ConsumerFactory<String, TransportUpserted> transportConsumerFactory) {
+      transportKafkaListenerContainerFactory() {
    
         ConcurrentKafkaListenerContainerFactory<String, TransportUpserted> factory =
           new ConcurrentKafkaListenerContainerFactory<>();
-        factory.setConsumerFactory(transportConsumerFactory);
+        factory.setConsumerFactory(transportConsumerFactory());
         return factory;
     }
 }

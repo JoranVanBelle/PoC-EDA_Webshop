@@ -25,7 +25,6 @@ public class PricingProducerComponent {
 		this.properties = properties;
 	}
 	
-    @Bean
     public ProducerFactory<String, PricingUpserted> pricingProducerFactory() {
         Map<String, Object> configProps = new HashMap<>();
         configProps.put(

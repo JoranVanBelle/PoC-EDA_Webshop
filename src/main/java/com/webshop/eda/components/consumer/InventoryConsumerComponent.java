@@ -24,7 +24,6 @@ private final ConsumerProperties properties;
 		this.properties = properties;
 	}
 	
-    @Bean
     public ConsumerFactory<String, InventoryUpserted> inventoryConsumerFactory() {
         Map<String, Object> props = new HashMap<>();
         props.put(
@@ -50,11 +49,11 @@ private final ConsumerProperties properties;
 
     @Bean
     public ConcurrentKafkaListenerContainerFactory<String, InventoryUpserted> 
-      InventoryKafkaListenerContainerFactory(ConsumerFactory<String, InventoryUpserted> inventoryConsumerFactory) {
+      InventoryKafkaListenerContainerFactory() {
    
         ConcurrentKafkaListenerContainerFactory<String, InventoryUpserted> factory =
           new ConcurrentKafkaListenerContainerFactory<>();
-        factory.setConsumerFactory(inventoryConsumerFactory);
+        factory.setConsumerFactory(inventoryConsumerFactory());
         return factory;
     }
 }
