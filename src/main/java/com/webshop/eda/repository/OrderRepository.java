@@ -23,7 +23,8 @@ public class OrderRepository {
 		jdbcTemplate.update("DROP TABLE IF EXISTS Orders;", new MapSqlParameterSource());
 		
 		jdbcTemplate.update("CREATE TABLE orders(\r\n"
-				+ "	orderid INT PRIMARY KEY,\r\n"
+				+ "	id INT PRIMARY KEY AUTO_INCREMENT,\r\n"
+				+ "	orderid INT NOT NULL,\r\n"
 				+ "    orderprice DOUBLE NOT NULL,\r\n"
 				+ "    inventoryid INT NOT NULL,\r\n"
 				+ "    quantity INT NOT NULL,\r\n"

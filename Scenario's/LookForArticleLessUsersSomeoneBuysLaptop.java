@@ -295,6 +295,14 @@ ScenarioBuilder scn3 = scenario("LookForAnArticle3")
         nothingFor(4),
         atOnceUsers(10),
         rampUsersPerSec(1).to(3).during(450)
+        ),
+        scn11.injectOpen(
+          nothingFor(15),
+          atOnceUsers(100)
+        ),
+        scn12.injectOpen(
+          nothingFor(120),
+          atOnceUsers(100)
         )
         ).protocols(httpProtocol);
 

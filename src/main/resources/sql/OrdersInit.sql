@@ -3,7 +3,8 @@ DROP DATABASE IF EXISTS orders;
 CREATE DATABASE orders;
 
 CREATE TABLE orders(
-	orderid INT PRIMARY KEY,
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	orderid INT NOT NULL,
     orderprice DOUBLE NOT NULL,
     inventoryid INT NOT NULL,
     quantity INT NOT NULL,

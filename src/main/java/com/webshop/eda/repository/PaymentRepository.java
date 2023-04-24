@@ -23,7 +23,8 @@ public class PaymentRepository {
 		jdbcTemplate.update("DROP TABLE IF EXISTS Payment;", new MapSqlParameterSource());
 		
 		jdbcTemplate.update("CREATE TABLE Payment(\r\n"
-				+ "	orderid INT PRIMARY KEY,\r\n"
+				+ "	id INT PRIMARY KEY AUTO_INCREMENT,\r\n"
+				+ "	orderid INT NOT NULL,\r\n"
 				+ "    orderprice DOUBLE NOT NULL,\r\n"
 				+ "    inventoryid INT NOT NULL,\r\n"
 				+ "    quantity INT NOT NULL,\r\n"

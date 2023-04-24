@@ -3,7 +3,8 @@ DROP DATABASE IF EXISTS payment;
 CREATE DATABASE payment;
 
 CREATE TABLE Payment(
-	orderid INT PRIMARY KEY,
+	id INT PRIMARY KEY AUTO_INCREMENT,
+	orderid INT NOT NULL,
     orderprice DOUBLE NOT NULL,
     inventoryid INT NOT NULL,
     quantity INT NOT NULL,
