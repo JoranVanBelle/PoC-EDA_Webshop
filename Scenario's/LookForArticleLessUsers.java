@@ -148,7 +148,7 @@ ScenarioBuilder scn3 = scenario("LookForAnArticle3")
       .exec(
         http("request_0")
           .post("/login")
-          .body(RawFileBody("transport/0000_request.json"))
+          .body(RawFileBody("lookforanarticlelessusers/0000_request.json"))
       )
       .pause(9)
       .exec(
@@ -166,7 +166,7 @@ ScenarioBuilder scn3 = scenario("LookForAnArticle3")
       .exec(
         http("request_0")
           .post("/login")
-          .body(RawFileBody("transport/0000_request.json"))
+          .body(RawFileBody("lookforanarticlelessusers/0000_request.json"))
       )
       .pause(9)
       .exec(
@@ -183,7 +183,7 @@ ScenarioBuilder scn3 = scenario("LookForAnArticle3")
       .exec(
         http("request_0")
           .post("/login")
-          .body(RawFileBody("transport/0000_request.json"))
+          .body(RawFileBody("lookforanarticlelessusers/0000_request.json"))
       )
       .pause(9)
       .exec(

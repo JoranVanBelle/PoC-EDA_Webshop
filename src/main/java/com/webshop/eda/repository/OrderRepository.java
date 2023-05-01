@@ -66,7 +66,7 @@ public class OrderRepository {
 		paramSource.addValue("transportid", order.getTransportID());
 		paramSource.addValue("timestamp", order.getTimestamp());
 		
-		int rowsAffected = jdbcTemplate.update("INSERT INTO Orders(orderid, orderprice, inventoryid, quantity, username, transportid, timestamp) VALUES(:orderid, :orderprice, :inventoryid, :quantity, :username, :transportid, :timestamp);", paramSource);
+		int rowsAffected = jdbcTemplate.update("INSERT INTO Orders(orderid, orderprice, inventoryid, quantity, username, transportid, timeUpserted) VALUES(:orderid, :orderprice, :inventoryid, :quantity, :username, :transportid, :timestamp);", paramSource);
 		
 		return rowsAffected;
 				

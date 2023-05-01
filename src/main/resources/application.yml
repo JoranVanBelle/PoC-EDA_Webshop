@@ -60,7 +60,7 @@ order:
 
 user:
   datasource:
-    url: jdbc:mysql://user:3306/user
+    url: jdbc:mysql://user:3306/users
     password: mysecretpassword
     username: root
 

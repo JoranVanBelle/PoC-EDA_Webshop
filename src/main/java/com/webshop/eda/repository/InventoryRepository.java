@@ -55,7 +55,7 @@ public class InventoryRepository {
 	public int postInventory(InventoryUpserted inventory) {
 		MapSqlParameterSource paramSource = new MapSqlParameterSource();
 		paramSource.addValue("productid", inventory.getProductID());
-		paramSource.addValue("productname", inventory.getProductID());
+		paramSource.addValue("productname", inventory.getProductname());
 		paramSource.addValue("quantity", inventory.getQuantity());
 		paramSource.addValue("timeUpserted", inventory.getTimestamp());
 		

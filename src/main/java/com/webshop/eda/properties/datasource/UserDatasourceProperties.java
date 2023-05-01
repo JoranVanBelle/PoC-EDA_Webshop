@@ -2,7 +2,7 @@ package com.webshop.eda.properties.datasource;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(prefix="order.datasource")
+@ConfigurationProperties(prefix="user.datasource")
 public class UserDatasourceProperties {
 
 	private String url;

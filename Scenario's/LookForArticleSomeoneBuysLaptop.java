@@ -20,7 +20,7 @@ public class LookForArticleSomeoneBuysLaptop extends Simulation {
       .exec(
         http("request_0")
           .post("/login")
-          .body(RawFileBody("lookforanarticle/0000_request.json"))
+          .body(RawFileBody("lookforarticlesomeonebuyslaptop/0000_request.json"))
       )
       .pause(9)
       .exec(
@@ -38,7 +38,7 @@ ScenarioBuilder scn2 = scenario("LookForAnArticle2")
       .exec(
         http("request_0")
           .post("/login")
-          .body(RawFileBody("lookforanarticle/0000_request.json"))
+          .body(RawFileBody("lookforarticlesomeonebuyslaptop/0000_request.json"))
       )
       .pause(9)
       .exec(
@@ -57,7 +57,7 @@ ScenarioBuilder scn3 = scenario("LookForAnArticle3")
       .exec(
         http("request_0")
           .post("/login")
-          .body(RawFileBody("lookforanarticle/0000_request.json"))
+          .body(RawFileBody("lookforarticlesomeonebuyslaptop/0000_request.json"))
       )
       .pause(9)
       .exec(
@@ -76,7 +76,7 @@ ScenarioBuilder scn3 = scenario("LookForAnArticle3")
       .exec(
         http("request_0")
           .post("/login")
-          .body(RawFileBody("lookforanarticle/0000_request.json"))
+          .body(RawFileBody("lookforarticlesomeonebuyslaptop/0000_request.json"))
       )
       .pause(9)
       .exec(
@@ -94,7 +94,7 @@ ScenarioBuilder scn3 = scenario("LookForAnArticle3")
       .exec(
         http("request_0")
           .post("/login")
-          .body(RawFileBody("lookforanarticle/0000_request.json"))
+          .body(RawFileBody("lookforarticlesomeonebuyslaptop/0000_request.json"))
       )
       .pause(9)
       .exec(
@@ -112,7 +112,7 @@ ScenarioBuilder scn3 = scenario("LookForAnArticle3")
       .exec(
         http("request_0")
           .post("/login")
-          .body(RawFileBody("lookforanarticle/0000_request.json"))
+          .body(RawFileBody("lookforarticlesomeonebuyslaptop/0000_request.json"))
       )
       .pause(9)
       .exec(
@@ -130,7 +130,7 @@ ScenarioBuilder scn3 = scenario("LookForAnArticle3")
       .exec(
         http("request_0")
           .post("/login")
-          .body(RawFileBody("lookforanarticle/0000_request.json"))
+          .body(RawFileBody("lookforarticlesomeonebuyslaptop/0000_request.json"))
       )
       .pause(9)
       .exec(
@@ -148,7 +148,7 @@ ScenarioBuilder scn3 = scenario("LookForAnArticle3")
       .exec(
         http("request_0")
           .post("/login")
-          .body(RawFileBody("lookforanarticle/0000_request.json"))
+          .body(RawFileBody("lookforarticlesomeonebuyslaptop/0000_request.json"))
       )
       .pause(9)
       .exec(
@@ -166,7 +166,7 @@ ScenarioBuilder scn3 = scenario("LookForAnArticle3")
       .exec(
         http("request_0")
           .post("/login")
-          .body(RawFileBody("lookforanarticle/0000_request.json"))
+          .body(RawFileBody("lookforarticlesomeonebuyslaptop/0000_request.json"))
       )
       .pause(9)
       .exec(
@@ -183,7 +183,7 @@ ScenarioBuilder scn3 = scenario("LookForAnArticle3")
       .exec(
         http("request_0")
           .post("/login")
-          .body(RawFileBody("lookforanarticle/0000_request.json"))
+          .body(RawFileBody("lookforarticlesomeonebuyslaptop/0000_request.json"))
       )
       .pause(9)
       .exec(
@@ -200,7 +200,7 @@ ScenarioBuilder scn3 = scenario("LookForAnArticle3")
       .exec(
         http("request_0")
           .post("/login")
-          .body(RawFileBody("buyalaptop/0000_request.json"))
+          .body(RawFileBody("lookforarticlesomeonebuyslaptop/0000_request.json"))
       )
       .pause(8)
       .exec(
@@ -217,15 +217,14 @@ ScenarioBuilder scn3 = scenario("LookForAnArticle3")
       .exec(
         http("request_4")
           .post("/order")
-          .body(RawFileBody("buyalaptop/0025_request.json"))
+          .body(RawFileBody("lookforarticlesomeonebuyslaptop/0025_request.json"))
       );
 
-      ScenarioBuilder scn12 = scenario("BuyALaptop2")
-     ScenarioBuilder scn = scenario("BuyALaptop")
+     ScenarioBuilder scn12 = scenario("BuyALaptop")
       .exec(
         http("request_0")
           .post("/login")
-          .body(RawFileBody("buyalaptop/0000_request.json"))
+          .body(RawFileBody("lookforarticlesomeonebuyslaptop/0000_request.json"))
       )
       .pause(8)
       .exec(
@@ -242,7 +241,7 @@ ScenarioBuilder scn3 = scenario("LookForAnArticle3")
       .exec(
         http("request_4")
           .post("/order")
-          .body(RawFileBody("buyalaptop/0025_request.json"))
+          .body(RawFileBody("lookforarticlesomeonebuyslaptop/0025_request.json"))
       );
 
 

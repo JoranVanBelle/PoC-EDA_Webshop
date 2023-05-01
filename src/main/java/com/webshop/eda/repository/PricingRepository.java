@@ -55,7 +55,7 @@ public class PricingRepository {
 	public int postPricing(PricingUpserted pricing) {
 		MapSqlParameterSource paramSource = new MapSqlParameterSource();
 		paramSource.addValue("productid", pricing.getProductID());
-		paramSource.addValue("productname", pricing.getProductID());
+		paramSource.addValue("productname", pricing.getProductname());
 		paramSource.addValue("price", pricing.getPrice());
 		paramSource.addValue("timeUpserted", pricing.getTimestamp());
 		
