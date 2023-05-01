@@ -1,6 +1,6 @@
 # Proof-of-Concept EDA Webshop
 
-Deze repository bevat alle code die is gebruikt tijdens het onderzoek naar het verschil tussen [service-oriented architecture](https://github.com/JoranVanBelle/Proof-of-Concept-SOA-webshop) en event-driven architecture.
+Deze repository bevat alle code die is gebruikt tijdens het onderzoek naar het verschil tussen [service-oriented architecture](https://github.com/JoranVanBelle/SOA_webshop) en event-driven architecture.
 
 ## Inhoud
 
