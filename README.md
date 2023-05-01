@@ -22,4 +22,4 @@ Om de architectuur te kunnen runnen in docker dienen volgende stappen uitgevoerd
   3. De containers opzetten en runnen
     3.1 docker-compose up
 
-Vooraleer de test kan gerunt worden, is het belangrijk om de databank te populaten. Dit kan gedaan worden met behulp van de sql-code in de resource-directory.
+Vooraleer de test kan gerunt worden, is het belangrijk om de databank te populaten. Dit kan gedaan worden met behulp van de sql-code in de resource-directory. Vooraleer deze statements uitgevoerd kunnen worden is het belangrijk dat de webshop-klasse aan het runnen is
